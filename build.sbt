@@ -1,7 +1,3 @@
-ScriptedPlugin.scriptedSettings
-
-scriptedBufferLog := false
-
-resolvers += Classpaths.typesafeReleases
-
-name := "sbt-value-class-bug"
+TaskKey[Unit]("changeValueClass") := {
+  IO.copyFile(file("A-value-class"), file("A.scala"))
+}

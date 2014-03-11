@@ -1,3 +1,24 @@
 language: scala
+
+scala:
+  - 2.10.0
+  - 2.10.1
+  - 2.10.2
+  - 2.10.3
+  - 2.10.4-RC3
+  - 2.11.0-RC1
+
 script:
-  - sbt scripted
+  - sbt -sbt-version $SBT_VERSION ++$TRAVIS_SCALA_VERSION compile changeValueClass run
+
+env:
+  - SBT_VERSION=0.11.3
+  - SBT_VERSION=0.12.0
+  - SBT_VERSION=0.12.1
+  - SBT_VERSION=0.12.2
+  - SBT_VERSION=0.12.3
+  - SBT_VERSION=0.12.4
+  - SBT_VERSION=0.13.0
+  - SBT_VERSION=0.13.1
+  - SBT_VERSION=0.13.2-M2
+
